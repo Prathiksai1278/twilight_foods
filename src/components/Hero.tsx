@@ -5,13 +5,23 @@ export default function Hero() {
     <section className="relative h-screen overflow-hidden">
 
       {/* Background Banner */}
-      <Image
-        src="/banner.png"
-        alt="Twilight Pragathi Nagar"
-        fill
-        priority
-        className="object-cover"
-      />
+      {/* Desktop Banner */}
+<Image
+  src="/banner.png"
+  alt="Twilight Pragathi Nagar"
+  fill
+  priority
+  className="hidden md:block object-cover"
+/>
+
+{/* Mobile Banner */}
+<Image
+  src="/mobile.png"
+  alt="Twilight Pragathi Nagar"
+  fill
+  priority
+  className="block md:hidden object-cover"
+/>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/20" />
