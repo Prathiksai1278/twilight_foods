@@ -11,7 +11,9 @@ export default function Hero() {
   alt="Twilight Pragathi Nagar"
   fill
   priority
-  className="hidden md:block object-cover"
+  sizes="100vw"
+  className="hid
+  den md:block object-cover"
 />
 
 {/* Mobile Banner */}
@@ -20,6 +22,7 @@ export default function Hero() {
   alt="Twilight Pragathi Nagar"
   fill
   priority
+  sizes="100vw"
   className="block md:hidden object-cover"
 />
 

@@ -13,7 +13,6 @@ export default function Home() {
       <Hero />
       <Spotlight />
       <MenuShowcase />
-      
       <Gallery />
       <ContactSection />
       <Footer/>

@@ -10,24 +10,24 @@ export default function Footer() {
         <div className="flex items-center gap-8">
 
           <FaInstagram
-            size={38}
-            className="cursor-pointer text-zinc-400 transition-all duration-300 hover:scale-110 hover:text-fuchsia-500"
-          />
+   size={38}
+  className="text-pink-500 transition-all duration-300 hover:scale-110"
+/>
 
           <FaWhatsapp
-            size={38}
-            className="cursor-pointer text-zinc-400 transition-all duration-300 hover:scale-110 hover:text-green-500"
-          />
+  size={38}
+  className="text-green-500 transition-all duration-300 hover:scale-110"
+/>
 
-          <MapPin
-            size={38}
-            className="cursor-pointer text-zinc-400 transition-all duration-300 hover:scale-110 hover:text-red-500"
-          />
+         <MapPin
+  size={38}
+  className="text-red-500 transition-all duration-300 hover:scale-110"
+/>
 
           <Phone
-            size={38}
-            className="cursor-pointer text-zinc-400 transition-all duration-300 hover:scale-110 hover:text-blue-500"
-          />
+  size={38}
+  className="text-blue-500 transition-all duration-300 hover:scale-110"
+/>
 
         </div>
 
