@@ -11,8 +11,9 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <MenuShowcase />
       <Spotlight />
+      <MenuShowcase />
+      
       <Gallery />
       <ContactSection />
       <Footer/>
