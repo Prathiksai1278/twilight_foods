@@ -3,10 +3,36 @@
 import { useState } from "react";
 import { Menu, Moon, X } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
+import { useTheme } from "@/context/ThemeContext";
+import MoonParticles from "@/components/MoonParticles";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+const [menuOpen, setMenuOpen] = useState(false);
 
+const { theme, toggleTheme } = useTheme();
+
+const [showParticles, setShowParticles] = useState(false);
+
+const [isAnimating, setIsAnimating] = useState(false);
+
+const handleMoonClick = () => {
+  if (isAnimating) return;
+
+  setIsAnimating(true);
+
+  toggleTheme();
+
+  setShowParticles(false);
+
+  setTimeout(() => {
+    setShowParticles(true);
+
+    setTimeout(() => {
+      setShowParticles(false);
+      setIsAnimating(false);
+    }, 1000);
+  }, 10);
+};
   return (
     <nav className="absolute top-0 left-0 z-50 w-full px-6 py-6 text-white md:px-12">
       <div className="flex items-center">
@@ -64,9 +90,38 @@ export default function Navbar() {
               Order Now
             </button>
           )}
+        <div className="relative">
+  <button onClick={handleMoonClick}>
+    <Moon
+      size={24}
+      className={`
+        transition-all
+        duration-500
 
-          <Moon size={24} />
+        ${
+          theme === "blue"
+            ? "rotate-180 text-blue-400"
+            : "rotate-0 text-amber-400"
+        }
+      `}
+      style={{
+        filter:
+          theme === "blue"
+            ? "drop-shadow(0 0 20px #60a5fa)"
+            : "drop-shadow(0 0 20px #fbbf24)",
+      }}
+    />
+  </button>
 
+  <MoonParticles
+    show={showParticles}
+    color={
+      theme === "blue"
+        ? "#60a5fa"
+        : "#fbbf24"
+    }
+  />
+</div>
         </div>
       </div>
 
