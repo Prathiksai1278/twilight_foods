@@ -1,8 +1,10 @@
 import Image from "next/image";
-id="home"
+
 export default function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section
+    id="home"
+    className="relative h-screen overflow-hidden">
 
       {/* Background Banner */}
       {/* Desktop Banner */}

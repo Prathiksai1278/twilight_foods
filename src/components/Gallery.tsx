@@ -2,7 +2,7 @@ import { gallery } from "@/data/gallery";
 
 export default function Gallery() {
   return (
-    <section className="bg-black px-6 py-16">
+    <section id="gallery" className="bg-black px-6 py-16">
       <div className="mx-auto max-w-7xl">
 
         <p className="text-center text-sm tracking-[0.4em] text-amber-400">

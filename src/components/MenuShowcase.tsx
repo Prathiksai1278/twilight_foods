@@ -27,7 +27,7 @@ const menuItems = [
 
 export default function MenuShowcase() {
   return (
-    <section className="bg-black px-6 py-16">
+    <section id="menu"className="bg-black px-6 py-16">
       <div className="mx-auto max-w-7xl">
 
         <p className="text-center tracking-[0.3em] text-amber-400">

@@ -9,10 +9,9 @@ export default function Navbar() {
 
   return (
     <nav className="absolute top-0 left-0 z-50 w-full px-6 py-6 text-white md:px-12">
-
       <div className="flex items-center">
 
-        {/* Hamburger */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden"
@@ -20,25 +19,25 @@ export default function Navbar() {
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Desktop Links */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#home" className="hover:text-amber-400">
+          <a href="#home" className="transition hover:text-amber-400">
             Home
           </a>
 
-          <a href="#offers" className="hover:text-amber-400">
+          <a href="#offers" className="transition hover:text-amber-400">
             Offers
           </a>
 
-          <a href="#menu" className="hover:text-amber-400">
+          <a href="#menu" className="transition hover:text-amber-400">
             Menu
           </a>
 
-          <a href="#gallery" className="hover:text-amber-400">
+          <a href="#gallery" className="transition hover:text-amber-400">
             Gallery
           </a>
 
-          <a href="#contact" className="hover:text-amber-400">
+          <a href="#contact" className="transition hover:text-amber-400">
             Contact
           </a>
         </div>
@@ -76,12 +75,12 @@ export default function Navbar() {
         <div
           className="
             mt-4
-            rounded-2xl
+            rounded-3xl
             border
             border-zinc-800
             bg-black/95
-            backdrop-blur
-            p-4
+            backdrop-blur-md
+            p-5
             md:hidden
           "
         >
@@ -90,7 +89,7 @@ export default function Navbar() {
             <a
               href="#home"
               onClick={() => setMenuOpen(false)}
-              className="hover:text-amber-400"
+              className="transition hover:text-amber-400"
             >
               Home
             </a>
@@ -98,7 +97,7 @@ export default function Navbar() {
             <a
               href="#offers"
               onClick={() => setMenuOpen(false)}
-              className="hover:text-amber-400"
+              className="transition hover:text-amber-400"
             >
               Offers
             </a>
@@ -106,7 +105,7 @@ export default function Navbar() {
             <a
               href="#menu"
               onClick={() => setMenuOpen(false)}
-              className="hover:text-amber-400"
+              className="transition hover:text-amber-400"
             >
               Menu
             </a>
@@ -114,7 +113,7 @@ export default function Navbar() {
             <a
               href="#gallery"
               onClick={() => setMenuOpen(false)}
-              className="hover:text-amber-400"
+              className="transition hover:text-amber-400"
             >
               Gallery
             </a>
@@ -122,9 +121,58 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="hover:text-amber-400"
+              className="transition hover:text-amber-400"
             >
               Contact
+            </a>
+
+            {siteConfig.showOrderButton && (
+              <>
+                <div className="my-2 border-t border-zinc-800" />
+
+                <button
+                  className="
+                    rounded-full
+                    border
+                    border-amber-400
+                    px-4
+                    py-2
+                    text-amber-400
+                  "
+                >
+                  Order Now
+                </button>
+              </>
+            )}
+
+            <div className="my-2 border-t border-zinc-800" />
+
+            <a
+              href="#"
+              className="transition hover:text-pink-500"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="#"
+              className="transition hover:text-green-500"
+            >
+              WhatsApp
+            </a>
+
+            <a
+              href="#"
+              className="transition hover:text-red-500"
+            >
+              Location
+            </a>
+
+            <a
+              href="#"
+              className="transition hover:text-blue-500"
+            >
+              Call Us
             </a>
 
           </div>

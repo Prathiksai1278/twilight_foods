@@ -6,7 +6,7 @@ export default function Spotlight() {
     .slice(0, 3);
 
   return (
-    <section className="bg-black px-6 py-0">
+    <section id="offers" className="bg-black px-6 py-0">
       <div className="mx-auto max-w-7xl">
 
         <p className="text-center text-sm tracking-[0.4em] text-amber-400">
