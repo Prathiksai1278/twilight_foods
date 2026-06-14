@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+id="home"
 export default function Hero() {
   return (
     <section className="relative h-screen overflow-hidden">
