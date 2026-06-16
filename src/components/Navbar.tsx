@@ -10,6 +10,15 @@ export default function Navbar() {
 const [menuOpen, setMenuOpen] = useState(false);
 
 const { theme, toggleTheme } = useTheme();
+const accent =
+  theme === "blue"
+    ? "text-blue-400"
+    : "text-amber-400";
+
+const accentBorder =
+  theme === "blue"
+    ? "border-blue-400"
+    : "border-amber-400";
 
 const [showParticles, setShowParticles] = useState(false);
 
@@ -47,23 +56,43 @@ const handleMoonClick = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#home" className="transition hover:text-amber-400">
+          <a href="#home" className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}>
             Home
           </a>
 
-          <a href="#offers" className="transition hover:text-amber-400">
+          <a href="#offers" className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}>
             Offers
           </a>
 
-          <a href="#menu" className="transition hover:text-amber-400">
+          <a href="#menu" className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}>
             Menu
           </a>
 
-          <a href="#gallery" className="transition hover:text-amber-400">
+          <a href="#gallery" className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}>
             Gallery
           </a>
 
-          <a href="#contact" className="transition hover:text-amber-400">
+          <a href="#contact" className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}>
             Contact
           </a>
         </div>
@@ -144,7 +173,11 @@ const handleMoonClick = () => {
             <a
               href="#home"
               onClick={() => setMenuOpen(false)}
-              className="transition hover:text-amber-400"
+              className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}
             >
               Home
             </a>
@@ -152,7 +185,11 @@ const handleMoonClick = () => {
             <a
               href="#offers"
               onClick={() => setMenuOpen(false)}
-              className="transition hover:text-amber-400"
+              className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}
             >
               Offers
             </a>
@@ -160,7 +197,11 @@ const handleMoonClick = () => {
             <a
               href="#menu"
               onClick={() => setMenuOpen(false)}
-              className="transition hover:text-amber-400"
+              className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}
             >
               Menu
             </a>
@@ -176,7 +217,11 @@ const handleMoonClick = () => {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="transition hover:text-amber-400"
+              className={`transition ${
+  theme === "blue"
+    ? "hover:text-blue-400"
+    : "hover:text-amber-400"
+}`}
             >
               Contact
             </a>
@@ -186,17 +231,34 @@ const handleMoonClick = () => {
                 <div className="my-2 border-t border-zinc-800" />
 
                 <button
-                  className="
-                    rounded-full
-                    border
-                    border-amber-400
-                    px-4
-                    py-2
-                    text-amber-400
-                  "
-                >
-                  Order Now
-                </button>
+  className={`
+    rounded-full
+    border
+    px-5
+    py-2
+    text-sm
+    transition-all
+    duration-300
+
+    ${
+      theme === "blue"
+        ? `
+          border-blue-400
+          text-blue-400
+          hover:bg-blue-400
+        `
+        : `
+          border-amber-400
+          text-amber-400
+          hover:bg-amber-400
+        `
+    }
+
+    hover:text-black
+  `}
+>
+  Order Now
+</button>
               </>
             )}
 
