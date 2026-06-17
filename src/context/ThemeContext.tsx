@@ -1,36 +1,23 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { createContext, useContext, useState } from "react";
 
 type ThemeType = "amber" | "blue";
 
 type ThemeContextType = {
   theme: ThemeType;
   toggleTheme: () => void;
+  accent: string;
+  border: string;
 };
 
-const ThemeContext = createContext<
-  ThemeContextType | undefined
->(undefined);
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [theme, setTheme] =
-    useState<ThemeType>("amber");
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useState<ThemeType>("amber");
 
   const toggleTheme = () => {
-    setTheme((prev) =>
-      prev === "amber"
-        ? "blue"
-        : "amber"
-    );
+    setTheme((prev) => (prev === "amber" ? "blue" : "amber"));
   };
 
   return (
@@ -38,24 +25,17 @@ export function ThemeProvider({
       value={{
         theme,
         toggleTheme,
+        accent: theme === "blue" ? "text-blue-400" : "text-amber-400",
+        border: theme === "blue" ? "border-blue-400" : "border-amber-400",
       }}
     >
-      <div className={theme}>
-        {children}
-      </div>
+      {children}
     </ThemeContext.Provider>
   );
 }
 
 export function useTheme() {
-  const context =
-    useContext(ThemeContext);
-
-  if (!context) {
-    throw new Error(
-      "useTheme must be used inside ThemeProvider"
-    );
-  }
-
+  const context = useContext(ThemeContext);
+  if (!context) throw new Error("useTheme must be used inside ThemeProvider");
   return context;
 }
